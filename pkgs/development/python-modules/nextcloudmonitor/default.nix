@@ -22,14 +22,14 @@ buildPythonPackage rec {
   patches = [
     (fetchpatch2 {
       # https://github.com/meichthys/nextcloud_monitor/pull/10
-      url  = "https://github.com/meichthys/nextcloud_monitor/commit/cf6191d148e0494de5ae3cbe8fc5ffdba71b6c21.patch";
+      url = "https://github.com/meichthys/nextcloud_monitor/commit/cf6191d148e0494de5ae3cbe8fc5ffdba71b6c21.patch";
       hash = "sha256-BSTX5dw+k+ItT6qvpjLiDsH9rW1NmkaBeGO9TlNZZis=";
     })
   ];
 
   build-system = [ setuptools ];
 
-  dependencies= [ requests ];
+  dependencies = [ requests ];
 
   # no tests implemented
   doCheck = false;
