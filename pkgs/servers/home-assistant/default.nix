@@ -87,6 +87,16 @@ let
         ];
       });
 
+      async-timeout = super.async-timeout.overridePythonAttrs (oldAttrs: rec {
+        version = "4.0.3";
+        src = fetchFromGitHub {
+          owner = "aio-libs";
+          repo = "async-timeout";
+          tag = "v${version}";
+          hash = "sha256-gJGVRm7YMWnVicz2juHKW8kjJBxn4/vQ/kc2kQyl1i4=";
+        };
+      });
+
       gspread = super.gspread.overridePythonAttrs (oldAttrs: rec {
         version = "5.12.4";
         src = fetchFromGitHub {
